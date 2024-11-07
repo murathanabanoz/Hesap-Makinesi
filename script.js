@@ -15,17 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
           currentInput = eval(currentInput);
           display.value = currentInput;
+          localStorage.setItem("lastCalculation", currentInput);
         } catch (error) {
           display.value = "Hata";
           currentInput = "";
         }
       } else if (buttonText === "←") {
-        currentInput = currentInput.slice(0, -1);
-        display.value = currentInput;
+        if (display.value !== "0") {
+          currentInput = currentInput.slice(0, -1);
+          display.value = currentInput || "0";
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
       }
     });
   });
+  if (localStorage.getItem("lastCalculation")) {
+    display.value = localStorage.getItem("lastCalculation");
+  }
 });
