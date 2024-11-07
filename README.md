@@ -5,3 +5,9 @@ Features:
 - Basic mathematical operations (addition, subtraction, multiplication, division)
 - Retention of the last calculation result (using localStorage)
 - User-friendly and clean interface
+  
+Usage
+Click on the number or operation buttons to create calculations on the screen.
+The C button clears the screen.
+The ← button deletes the last character on the screen.
+The = button calculates the operation and displays the result.
